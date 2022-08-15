@@ -66,6 +66,9 @@ class AdicionarItem {
 class FormularioCompra extends StatelessWidget {
   const FormularioCompra({Key? key}) : super(key: key);
 
+  final TextEditingController _controladorNome = TextEditingController();
+  final TextEditingController _controladorQuantidade = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,18 +78,27 @@ class FormularioCompra extends StatelessWidget {
         child: Column(
           children: [
             TextField(
+              controller: _controladorNome,
               style: TextStyle(fontSize: 24),
               decoration: InputDecoration(
                 labelText: "Nome",
                 hintText: "Ex. Arroz",
               ),
+              keyboardType: TextInputType.text,
             ),
             TextField(
+              controller: _controladorQuantidade,
+              style: TextStyle(fontSize: 24),
               decoration: InputDecoration(
+                icon: const Icon(Icons.store_mall_directory),
                 labelText: "Quantidade",
               ),
+              keyboardType: TextInputType.number,
             ),
-            ElevatedButton(onPressed: () => {}, child: Text("Confirmar"))
+            Padding(
+                padding: const EdgeInsets.fromLTRB(8, 24, 8, 16),
+                child: ElevatedButton(
+                    onPressed: () => {}, child: Text("Adicionar"))),
           ],
         ),
       ),
