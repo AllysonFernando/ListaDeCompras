@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(ListaDeComprasApp());
+void main() => runApp(const ListaDeComprasApp());
 
 class ListaDeComprasApp extends StatelessWidget {
   const ListaDeComprasApp({Key? key}) : super(key: key);
@@ -16,6 +16,8 @@ class ListaDeComprasApp extends StatelessWidget {
 }
 
 class ListaDeCompras extends StatelessWidget {
+  const ListaDeCompras({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,7 +66,7 @@ class AdicionarItem {
 }
 
 class FormularioCompra extends StatelessWidget {
-  const FormularioCompra({Key? key}) : super(key: key);
+  FormularioCompra({Key? key}) : super(key: key);
 
   final TextEditingController _controladorNome = TextEditingController();
   final TextEditingController _controladorQuantidade = TextEditingController();
@@ -79,8 +81,8 @@ class FormularioCompra extends StatelessWidget {
           children: [
             TextField(
               controller: _controladorNome,
-              style: TextStyle(fontSize: 24),
-              decoration: InputDecoration(
+              style: const TextStyle(fontSize: 24),
+              decoration: const InputDecoration(
                 labelText: "Nome",
                 hintText: "Ex. Arroz",
               ),
@@ -88,9 +90,9 @@ class FormularioCompra extends StatelessWidget {
             ),
             TextField(
               controller: _controladorQuantidade,
-              style: TextStyle(fontSize: 24),
-              decoration: InputDecoration(
-                icon: const Icon(Icons.store_mall_directory),
+              style: const TextStyle(fontSize: 24),
+              decoration: const InputDecoration(
+                icon: Icon(Icons.store_mall_directory),
                 labelText: "Quantidade",
               ),
               keyboardType: TextInputType.number,
@@ -98,7 +100,7 @@ class FormularioCompra extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.fromLTRB(8, 24, 8, 16),
                 child: ElevatedButton(
-                    onPressed: () => {}, child: Text("Adicionar"))),
+                    onPressed: () => {}, child: const Text("Adicionar"))),
           ],
         ),
       ),
